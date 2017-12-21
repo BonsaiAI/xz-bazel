@@ -26,6 +26,7 @@ cc_library(
     srcs = glob(["src/*.c", "src/*.h"]) + [":config_h"],
     hdrs = glob(["include/**/*.h"]),
     defines = ["HAVE_CONFIG_H"],
-    includes = ["src", "include"],
+    strip_include_prefix = "include",
+    includes = ["src"],
     visibility = ["//visibility:public"]
 )
